@@ -19,6 +19,16 @@
 </property>
 
 <property>
+  <name>http.content.limit</name>
+  <value>1000000</value>
+  <description>The length limit for downloaded content using the http://
+  protocol, in bytes. If this value is nonnegative (>=0), content longer
+  than it will be truncated; otherwise, no truncation at all. Do not
+  confuse this setting with the file.content.limit setting.
+  </description>
+</property>
+
+<property>
 <name>plugin.includes</name>
 <value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|indexer-elastic|scoring-opic|urlnormalizer-(pass|regex|basic)</value>
 <description>Regular expression naming plugin directory names to include. Any plugin not matching this expression is excluded.In any case you need at least include the nutch-extensionpoints plugin. By default Nutch includes crawling just HTML and plain text via HTTP, and basic indexing and search plugins. In order to use HTTPS please enable protocol-httpclient, but be aware of possible intermittent problems with the underlying commons-httpclient library.

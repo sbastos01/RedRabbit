@@ -185,15 +185,15 @@ do
 
 # note that the link inversion - indexing routine can be done within the main loop 
 # on a per segment basis
-  echo "Link inversion"
-  __bin_nutch invertlinks "$CRAWL_PATH"/linkdb "$CRAWL_PATH"/segments/$SEGMENT
+#  echo "Link inversion"
+#  __bin_nutch invertlinks "$CRAWL_PATH"/linkdb "$CRAWL_PATH"/segments/$SEGMENT
 
   echo "Dedup on crawldb"
   __bin_nutch dedup "$CRAWL_PATH"/crawldb
 
   if $INDEXFLAG; then
       echo "Indexing $SEGMENT to index"
-      __bin_nutch index $JAVA_PROPERTIES "$CRAWL_PATH"/crawldb -linkdb "$CRAWL_PATH"/linkdb "$CRAWL_PATH"/segments/$SEGMENT
+      __bin_nutch index $JAVA_PROPERTIES "$CRAWL_PATH"/crawldb "$CRAWL_PATH"/segments/$SEGMENT
   
       echo "Cleaning up index if possible"
       __bin_nutch clean $JAVA_PROPERTIES "$CRAWL_PATH"/crawldb
