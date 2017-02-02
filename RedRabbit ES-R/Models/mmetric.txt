@@ -1,0 +1,24 @@
+## creating data.frame for new
+df_n <- as.data.frame(inspect(dtm_n))
+#df2 <- as.data.frame(dtm_n)
+
+pred_s <- predict(model_s, df_n, decision.values = TRUE)
+pred_n <- predict(model_n, df_n, decision.values = TRUE, probability = TRUE)
+pred_t <- predict(model_t, df_n, decision.values = TRUE)
+ 
+
+###################################
+### Test
+# Accuracy 
+conf.mat_s <- table("Predictions" =pred_s, Actual= test$t_label)
+conf.mat_n <- table("Predictions" =pred_n, Actual= test$t_label)
+conf.mat_t <- table("Predictions" =pred_t, Actual= test$t_label)
+
+conf.mat_s
+conf.mat_n
+conf.mat_t
+(accuracy <- sum(diag(conf.mat)) / length(test)* 100)
+
+mmetric(pred_s, test$t_label,c("ACC","TPR","PRECISION","F1"))
+mmetric(pred_n, test$t_label,c("ACC","TPR","PRECISION","F1"))
+mmetric(pred_t, test$t_label,c("ACC","TPR","PRECISION","F1"))

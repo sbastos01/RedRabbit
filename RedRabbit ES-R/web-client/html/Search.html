@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../js/elasticsearch.min.js"></script>
+    <script src="../js/elasticsearch.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/home.css" rel="stylesheet" />
+    <!--<script src="../med3d.js"></script>-->
+    <script src="../Config/search_config.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/clientObject.js"></script>
+    <script src="../js/request.js"></script>
+</head>
+<body>
+    <div id="header" class="headcontainer">
+        <img src="../Image/RedRabbitlogo.png" class="logoimg" alt="" />
+        <img src="../Image/Med.png" class="logoimg" alt="" />
+        <div class="searchinp">
+            <input style="width: 350px; height: 20px;" />
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="tablehead">
+       <!-- <div class="savebtncontainer">
+            <button onclick="UpdateSME()">Save</button>
+        </div>-->
+        <div class="linkContainer">
+            <div class="searchval" value="*"> - All Scored Records</div> 
+            <!-- <div class="searchval" value="zspace">zspace</div>
+            <div class="searchval" value="echopixel">echopixel</div>  -->
+        </div>
+        <div class="headerbtncontainer">
+            <button onclick="getPrevPage()">Prev</button>
+            <button onclick="getNextPage()">Next</button>
+        </div>
+    </div>   
+    <div id="maincontainer">
+        <div class="quicklinkscontainer">
+            <div class="quicklinkTitle">Organizations</div>
+            <div class="quicklink" value="ms-s01" search="echopixel AND Medic* OR Clinic*">Echopixel</div>
+            <div class="quicklink" value="ms-s01" search="Zspace AND Medic* OR Clinic*">Zspace</div>
+			<div class="quicklink" value="ms-s01" search="daqri AND Medic* OR Clinic*">Daqri</div>
+			<div class="quicklink" value="ms-s01" search="touchsurgery AND Medic* OR Clinic*">Touchsurgery</div>
+				<div class="quicklink" value="ms-s01" search="CyberAnatomy AND Medic* OR Clinic*">CyberAnatomy</div>
+			
+            <div class="quicklinkTitle">Technology</div>
+            <div class="quicklink" value="ms-s01" search="VR OR virtual reality AND Medic* OR Clinic*">VR</div>
+			<div class="quicklink" value="ms-s01" search="Augment* AND Medic* OR Clinic*">Augmented</div>
+             <div class="quicklinkTitle">Source</div>
+            <div class="quicklink" value="ie-pro-2016-0117" search="Medic* OR Clinic*">IEEE</div>
+		 <div class="quicklink" value="ms-s01" search="Medic* OR Clinic*">Tweeter</div>
+			
+        </div>
+        <table class="datatable">
+            <tr class="rowhed">
+                <th>
+                    <div class="tableheadname">ML</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="t_ml"></i></th>
+                <th>
+                    <div class="tableheadname">SME</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="t_sme"></i></th>
+                <th>
+                    <div class="tableheadname">Message</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="t_message"></th>
+                <th>
+                    <div class="tableheadname">Medic</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="medic"></th>
+                <th>
+                    <div class="tableheadname">Naive</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score_naive"></th>
+                <th>
+                    <div class="tableheadname">Tree</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score_tree"></th>
+                <th>
+                    <div class="tableheadname">SVM</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score_svm"></th>
+                <th>
+                    <div class="tableheadname">Emotion</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score_emotion"></th>
+                <th>
+                    <div class="tableheadname">Date</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="t_time"></th>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <button onclick="getPrevPage()">Prev</button>
+        <button onclick="getNextPage()">Next</button>
+    </div>
+</body>
+</html>
