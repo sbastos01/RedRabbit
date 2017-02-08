@@ -14,7 +14,7 @@ model_s <- readRDS('C:/03-MyProjects/Models/model_s.rds')
 model_n <- readRDS('C:/03-MyProjects/Models/model_n.rds')
 model_t <- readRDS('C:/03-MyProjects/Models/model_t.rds')
 
-connect(es_base = "23.101.132.194", es_port = 9220)
+connect(es_base = "XX.101.132.194", es_port = XXXX)
 connection()
 
 cleanCorpus <- function(corpus)
@@ -55,12 +55,12 @@ cleanTweets = function(tweets)
 }
 
 num=1000
-mydata2 <- (fromJSON("https://api.diffbot.com/v3/search?token=9ade437e27ca6fbb44e57d07415ce806&num=1000&col=GLOBAL-INDEX&query=text%3Azspace%20OR%20text%3Aechopixel%20sortby%3Atimestamp", flatten = TRUE))
+mydata2 <- (fromJSON("https://api.diffbot.com/v3/search?token=XXXXX437e27ca6fbb44e57d07415ce806&num=1000&col=GLOBAL-INDEX&query=text%3Azspace%20OR%20text%3Aechopixel%20sortby%3Atimestamp", flatten = TRUE))
 mydata2.df <- as.data.frame(mydata2$objects)
 save(mydata2.df, file="di-source-echopixel-zspace-02-17")
 
 Start=1000
-mydata10001 <- (fromJSON("https://api.diffbot.com/v3/search?token=9ade437e27ca6fbb44e57d07415ce806&num=1000&Start=1000&col=GLOBAL-INDEX&query=text%3ATouchSurgery%20OR%20text%3Adaqri%20sortby%3Atimestamp", flatten = TRUE))
+mydata10001 <- (fromJSON("https://api.diffbot.com/v3/search?token=XXXXX37e27ca6fbb44e57d07415ce806&num=1000&Start=1000&col=GLOBAL-INDEX&query=text%3ATouchSurgery%20OR%20text%3Adaqri%20sortby%3Atimestamp", flatten = TRUE))
 mydata10001.df <- as.data.frame(mydata10001$objects)
 mydata2.df <- mydata10001.df
 
