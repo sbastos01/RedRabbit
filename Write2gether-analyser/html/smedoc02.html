@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../js/elasticsearch.min.js"></script>
+    <script src="../js/elasticsearch.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/smedoc.css" rel="stylesheet" />
+    <script src="../Config/smeDoc_config.js"></script>
+    <script src="../js/SearchDoc.js"></script>
+    <script src="../js/clientObject.js"></script>
+    <script src="../js/request.js"></script>
+</head>
+
+<body>
+    <div id="header" class="headcontainer">
+        <!-- <img src="../Image/RedRabbitlogo02.png" class="logoimg" alt="" /> -->
+        <img src="../Image/Med02.png" class="logoimg" alt="" />   
+        <label Draft 0.5 /label>
+        <div class='searchfields'>
+            <div class="searchqueryinp">
+                <label class='projectlabel'>Query</label>
+                <input id='searchquerytext' class='searchtext' style="width: 58%;" />
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <div class="searchcontextinp">
+                <label class='projectlabel'>Context</label>
+                <input id='searchcontexttext'  class='searchtext' style="width: 79%;" />
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <div class='project'>
+                <label class='projectlabel'>Query Test :</label>
+                <select class='projectdropdown'>
+                <option value="bodypart03-5 title-5">bodypart03-5 title-5</option>
+               <option value="bodypart03-1 title-5">bodypart03-1 title-5</option>
+               <option value="bodypart03-10">bodypart03-10</option>
+            </select>
+            </div>
+        </div>
+    </div>
+    <div class="tablehead">
+        <div class="totalhits"> </div>
+        <div style="float: left;">
+            <select class='scoredropdown' >
+                <option value="score02">score02</option>
+                <option value="score03">score03</option>
+                <option value="score04">score04</option>
+                <option value="score05">score05</option>
+            </select>
+            <button onclick="savescore()">Save score</button>
+        </div>
+        <div class="headerbtncontainer">
+            <button onclick="getPrevPage()">Prev</button>
+            <button onclick="getNextPage()">Next</button>
+        </div>
+    </div>
+    <div id="maincontainer">
+        <table class="datatable">
+            <tr class="rowhed">
+                <th>
+                    <div class="tableheadname">Id</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="pdfDocumentId"></i></th>
+                <th>
+                    <div class="tableheadname">Title</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="title"></i></th>
+                <th>
+                    <div class="tableheadname">Score</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score01"></th>
+                <th>
+                    <div class="tableheadname">Score02</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score02"></th>
+                <th>
+                    <div class="tableheadname">Score03</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score03"></th>
+                <th>
+                    <div class="tableheadname">Score04</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score04"></th>
+                <th>
+                    <div class="tableheadname">Score05</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="score05"></th>
+                <th>
+                    <div class="tableheadname">Highlight</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="bodypart"></th>
+                <th>
+                    <div class="tableheadname">Bodypart</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="bodypart"></th>
+                <th>
+                    <div class="tableheadname">Date</div>
+                    <i class="fa fa-sort-desc tableheadicon" aria-hidden="true" column="date"></th>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <button onclick="getPrevPage()">Prev</button>
+        <button onclick="getNextPage()">Next</button>
+    </div>
+</body>
+</html>

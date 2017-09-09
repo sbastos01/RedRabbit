@@ -1,0 +1,193 @@
+
+
+GET proc-twitter01/_mapping
+
+PUT document0907
+
+PUT document0907/document/_mapping
+{
+  "document": {
+    "_all": {
+      "enabled": false
+    },
+    "properties": {
+      "bodyPart": {
+        "type": "text",
+        "analyzer": "german"
+      },
+      "bodypart01": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "bodypart02": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "bodypart03": {
+        "type": "text",
+        "analyzer": "german",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "bodypart04": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "bodypart05": {
+        "type": "text",
+        "analyzer": "german",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "chapter_id": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer"
+      },
+      "owner_id": {
+        "type": "integer"
+      },
+      "pdfDocumentId": {
+        "type": "integer"
+      },
+      "pdfPage": {
+        "type": "integer"
+      },
+      "score01": {
+        "type": "long"
+      },
+      "score02": {
+        "type": "long"
+      },
+      "score03": {
+        "type": "long"
+      },
+      "score04": {
+        "type": "long"
+      },
+      "score05": {
+        "type": "long"
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "german",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "user_subject_id": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "sme": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "misc": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ml_aggregrate": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "score_ml": {
+        "type": "float"
+      },
+      "score_naive": {
+        "type": "float"
+      },
+      "score_nn": {
+        "type": "float"
+      },
+      "score_svm": {
+        "type": "float"
+      },
+      "score_tree": {
+        "type": "float"
+      },
+      "date": {
+        "type": "date"
+      },
+      "modifiedBy": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "language": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "entity_subject": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      }
+    }
+  }
+}
+}
+
